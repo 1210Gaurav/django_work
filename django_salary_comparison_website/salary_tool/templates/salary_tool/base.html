@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    
+    <!-- Your other head content here -->
+    <!-- Google Analytics gtag code -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7BPDCXZB7W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag()
+            {dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-7BPDCXZB7W');
+    </script>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    {% block head %}
+    
+    
+    {% endblock head %}
+
+    {% block scripts %}
+
+    {% endblock scripts %}
+
+</head>
+<body>
+    <!-- Your body content here -->
+    {% block content %}
+    
+    
+    {% endblock content %}
+
+</body>
+</html>

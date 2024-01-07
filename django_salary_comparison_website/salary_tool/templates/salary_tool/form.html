@@ -1,0 +1,49 @@
+{% extends 'salary_tool/base.html' %}
+
+    {% block head %}
+        <title>Compare Salary Tool</title>
+        
+    {% endblock head %}
+
+    {% block scripts %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var compareButton = document.getElementById('compare-button');
+            if (compareButton) {
+                compareButton.addEventListener('click', function() {
+                    gtag('event', 'click', {
+                        'event_category': 'Button',
+                        'event_label': 'Compare Button Clicked'
+                    });
+                });
+            }
+        });
+
+    </script>
+    {% endblock scripts %}
+    
+    {% block content %}
+    <div class="container">
+        <form class="salary-form" method="post">
+            {% csrf_token %}
+            <h1>Compare Your Salary</h1>
+            <label for="job_title">Job Title:</label>
+            <input type="text" name="job_title" id="job_title" required>
+
+            <label for="monthly_salary">Monthly Salary ($):</label>
+            <input type="number" name="monthly_salary" id="monthly_salary" required>
+
+            <label for="experience_years">Years of Experience:</label>
+            <input type="number" name="experience_years" id="experience_years">
+
+            <label for="gender">Gender:</label>
+            <select name="gender" id="gender">
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <button id="compare-button" type="submit">Compare</button>
+        </form>
+    </div>
+    {% endblock content %}
